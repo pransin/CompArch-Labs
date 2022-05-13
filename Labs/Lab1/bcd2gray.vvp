@@ -1,0 +1,64 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000017063276a10 .scope module, "testbench" "testbench" 2 1;
+ .timescale 0 0;
+v0000017063273b20_0 .var "a", 3 0;
+v00000170632739e0_0 .net "f", 3 0, L_0000017063273c60;  1 drivers
+S_0000017063276ba0 .scope module, "foo" "bcd2gray" 2 3, 3 1 0, S_0000017063276a10;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 4 "gray";
+    .port_info 1 /INPUT 4 "bcd";
+L_0000017063276e70 .functor BUF 1, L_0000017063273620, C4<0>, C4<0>, C4<0>;
+L_0000017063243430 .functor XOR 1, L_0000017063273260, L_0000017063273bc0, C4<0>, C4<0>;
+L_00000170632754b0 .functor XOR 1, L_0000017063273a80, L_0000017063273da0, C4<0>, C4<0>;
+L_000001706322aed0 .functor XOR 1, L_0000017063273080, L_0000017063273ee0, C4<0>, C4<0>;
+v0000017063243260_0 .net *"_ivl_0", 0 0, L_0000017063276e70;  1 drivers
+v0000017063242ee0_0 .net *"_ivl_10", 0 0, L_00000170632754b0;  1 drivers
+v0000017063276d30_0 .net *"_ivl_13", 0 0, L_0000017063273a80;  1 drivers
+v0000017063276dd0_0 .net *"_ivl_15", 0 0, L_0000017063273da0;  1 drivers
+v000001706322ad90_0 .net *"_ivl_16", 0 0, L_000001706322aed0;  1 drivers
+v000001706322ae30_0 .net *"_ivl_20", 0 0, L_0000017063273080;  1 drivers
+v0000017063273f80_0 .net *"_ivl_22", 0 0, L_0000017063273ee0;  1 drivers
+v0000017063273940_0 .net *"_ivl_3", 0 0, L_0000017063273620;  1 drivers
+v0000017063273580_0 .net *"_ivl_4", 0 0, L_0000017063243430;  1 drivers
+v0000017063273d00_0 .net *"_ivl_7", 0 0, L_0000017063273260;  1 drivers
+v0000017063273440_0 .net *"_ivl_9", 0 0, L_0000017063273bc0;  1 drivers
+v0000017063273120_0 .net "bcd", 3 0, v0000017063273b20_0;  1 drivers
+v00000170632736c0_0 .net "gray", 3 0, L_0000017063273c60;  alias, 1 drivers
+L_0000017063273620 .part v0000017063273b20_0, 3, 1;
+L_0000017063273260 .part v0000017063273b20_0, 3, 1;
+L_0000017063273bc0 .part v0000017063273b20_0, 2, 1;
+L_0000017063273a80 .part v0000017063273b20_0, 2, 1;
+L_0000017063273da0 .part v0000017063273b20_0, 1, 1;
+L_0000017063273c60 .concat8 [ 1 1 1 1], L_000001706322aed0, L_00000170632754b0, L_0000017063243430, L_0000017063276e70;
+L_0000017063273080 .part v0000017063273b20_0, 1, 1;
+L_0000017063273ee0 .part v0000017063273b20_0, 0, 1;
+    .scope S_0000017063276a10;
+T_0 ;
+    %vpi_call 2 6 "$monitor", " ", $time, " a=%b, f=%b", v0000017063273b20_0, v00000170632739e0_0 {0 0 0};
+    %delay 0, 0;
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v0000017063273b20_0, 0, 4;
+    %delay 2, 0;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v0000017063273b20_0, 0, 4;
+    %delay 5, 0;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0000017063273b20_0, 0, 4;
+    %delay 100, 0;
+    %vpi_call 2 13 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "bgtest.v";
+    "bcd2gray.v";

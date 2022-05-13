@@ -1,0 +1,45 @@
+$date
+	Sat Nov 27 16:00:40 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_FA $end
+$var wire 32 ! sum [31:0] $end
+$var wire 1 " cout $end
+$var reg 1 # cin $end
+$var reg 32 $ in1 [31:0] $end
+$var reg 32 % in2 [31:0] $end
+$scope module fa1 $end
+$var wire 1 # Cin $end
+$var wire 32 & In1 [31:0] $end
+$var wire 32 ' In2 [31:0] $end
+$var wire 32 ( Sum [31:0] $end
+$var wire 1 " Cout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1101111111101000 (
+b11101011110010 '
+b1010010011110101 &
+b11101011110010 %
+b1010010011110101 $
+1#
+0"
+b1101111111101000 !
+$end
+#10
+b1000101000100101 !
+b1000101000100101 (
+b100111100110010 $
+b100111100110010 &
+#20
+b1000101000100100 !
+b1000101000100100 (
+0#
+#420
